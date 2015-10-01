@@ -7,7 +7,7 @@ public static void main(String[] args) {
 
 
      int randNum , guessNum ;
-     //Generates a random number from 1 to 10
+    
      randNum = new java.util.Random().nextInt(10) + 1;
      System.out.println("Im thinking of a number from 1 to 10");
 
