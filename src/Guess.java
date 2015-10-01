@@ -4,18 +4,12 @@ import java.util.Random;
 
 import javax.swing.JOptionPane;
 
-/**
- *
- */
 
-/**
- * The "Guess a Number" game
- * */
 public class Guess {
 
 static boolean playAgain;
-static int max; // The objective will be between 1 and this number
-static int objective; // Users are trying to guess this number
+static int max; 
+static int objective; 
 static int userGuess;
 
 public Guess() {}
@@ -37,7 +31,7 @@ public Guess() {}
 
         boolean valid = false;
 
-        // Asks user for "max"
+        
         while(!valid) {
             try {
                 max = Integer.parseInt(JOptionPane.showInputDialog("You will try to guess a number between 1 and \"max\". Set max: "));
@@ -46,7 +40,7 @@ public Guess() {}
             catch (NumberFormatException e) {}
         }
 
-        // Ensures user input for max is greater than 1 and fits in an int
+
         while (max < 1 || max > Integer.MAX_VALUE) {
             valid = false;
             while (!valid) {
@@ -89,7 +83,7 @@ public Guess() {}
             }
             catch (NumberFormatException e){}
 
-            // Ensures user's guess is an integer greater than 0 and less than max
+        
             while (userGuess > max || userGuess < 1) {
                 try {
                     userGuess = Integer.parseInt(JOptionPane.showInputDialog(null, "Your guess must be between 1 and " + max));
@@ -104,7 +98,7 @@ public Guess() {}
    
     public static void userWinLose() {
 
-        // Tells the user their guess was too high, too low, or correct
+
         if (userGuess < objective)
             JOptionPane.showMessageDialog(null, "Too low!");
         else if (userGuess > objective)
@@ -119,7 +113,7 @@ public Guess() {}
 
         boolean valid = false;
 
-        // Confirms user input is an integer
+  
         while (!valid) {
             try {
                 if (Integer.parseInt(JOptionPane.showInputDialog("Enter 0 to quit or 1 to play again: ")) == 0)
